@@ -1,8 +1,10 @@
-package org.hcmut.wellwork;
+package org.hcmut.wellwork.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import org.hcmut.wellwork.R;
 
 public class MainActivity extends AppCompatActivity {
 
