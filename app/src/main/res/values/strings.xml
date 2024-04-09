@@ -1,4 +1,16 @@
 <resources>
+
     <string name="app_name">WellWork</string>
     <string name="workwell">WorkWell</string>
+    <string name="title_info">Information</string>
+    <string name="title_home">Home</string>
+    <string name="title_settings">Settings</string>
+    <string name="humid_button">Humidity</string>
+    <string name="temp_button">Temperature</string>
+    <string name="dist_button">Screen Distance</string>
+    <string name="humid_text">30%</string>
+    <string name="temp_text">30°C</string>
+    <string name="dist_text">100</string>
+
+
 </resources>

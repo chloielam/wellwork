@@ -7,136 +7,150 @@
     android:background="#F3EBF2"
     tools:context=".view.MainActivity">
 
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="369dp"
-        android:layout_height="102dp"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:background="#FFFFFF"
+        android:fontFamily="sans-serif-thin"
+        android:lineSpacingExtra="8sp"
         android:text="@string/workwell"
         android:textAlignment="center"
-        android:textSize="80sp"
-        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="#787373"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.003" />
 
-    <LinearLayout
-        android:layout_width="119dp"
-        android:layout_height="594dp"
-        android:layout_marginTop="4dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.613"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.313">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="198dp"
+        <ImageButton
+            android:id="@+id/tempbutton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="56dp"
+            android:adjustViewBounds="false"
+            android:background="#F3EBF2"
+            android:contentDescription="@string/temp_button"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_device_thermostat_24" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="201dp"
+        <TextView
+            android:id="@+id/tempval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/temp_text"
+            android:textAlignment="viewEnd"
+            android:textSize="70sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/humidbutton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="140dp"
+            android:background="#F3EBF2"
+            android:contentDescription="@string/humid_button"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tempbutton"
             app:srcCompat="@drawable/ic_baseline_water_drop_24" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="match_parent"
-            android:layout_height="191dp"
+        <ImageButton
+            android:id="@+id/distbutton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="128dp"
+            android:background="#F3EBF2"
+            android:contentDescription="@string/dist_button"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidbutton"
             app:srcCompat="@drawable/ic_baseline_screenshot_monitor_24" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="287dp"
-        android:layout_height="596dp"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="128dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.625">
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="196dp"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textSize="60sp" />
+            android:id="@+id/humidval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="72dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/humid_text"
+            android:textAlignment="viewEnd"
+            android:textSize="70sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tempval" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="64dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/humidval"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tempval"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/distval"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidval"
+            app:layout_constraintVertical_bias="0.582" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="206dp"
-            android:text="TextView"
-            android:textSize="60sp" />
+            android:id="@+id/distval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="72dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/dist_text"
+            android:textAlignment="viewEnd"
+            android:textSize="70sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidval" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="192dp"
-            android:text="TextView"
-            android:textSize="60sp" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="470dp"
-        android:layout_height="100dp"
-        android:background="#F3EBF2"
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.994">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="111dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="154dp"
-                android:layout_height="match_parent"
-                android:background="#00FFFFFF"
-                android:cropToPadding="false"
-                android:scaleType="fitXY"
-                android:scaleX="0.5"
-                android:scaleY="0.7"
-                app:srcCompat="@drawable/ic_baseline_info_24" />
-
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="152dp"
-                android:layout_height="match_parent"
-                android:background="#00FFFFFF"
-                android:scaleType="fitXY"
-                android:scaleX="0.5"
-                android:scaleY="0.7"
-                app:srcCompat="@drawable/ic_baseline_home_24" />
-
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="157dp"
-                android:layout_height="match_parent"
-                android:background="#00FFFFFF"
-                android:scaleType="fitXY"
-                android:scaleX="0.5"
-                android:scaleY="0.7"
-                app:srcCompat="@drawable/ic_baseline_settings_24" />
-
-        </LinearLayout>
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:menu="@menu/bottom_nav_menu"
+        tools:layout_conversion_absoluteHeight="56dp"
+        tools:layout_conversion_absoluteWidth="411dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
