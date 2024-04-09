@@ -5,6 +5,6 @@ public class TemperatureData extends PreferencesData{
         if(TemperatureData.Object == null){
             TemperatureData.Object = new TemperatureData();
         }
-        return DistanceData.Object;
+        return TemperatureData.Object;
     }
 }

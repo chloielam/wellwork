@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3EBF2"
+    android:visibility="visible"
+    tools:context=".view.HomeFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/distset"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif-thin"
+            android:lineSpacingExtra="8sp"
+            android:text="@string/workwell"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#787373"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tempval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="136dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/temp_text"
+            android:textAlignment="viewEnd"
+            android:textSize="70sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/humidbutton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="160dp"
+            android:background="#F3EBF2"
+            android:contentDescription="@string/humid_button"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tempbutton"
+            app:srcCompat="@drawable/ic_baseline_water_drop_24"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/distbutton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="132dp"
+            android:background="#F3EBF2"
+            android:contentDescription="@string/dist_button"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidbutton"
+            app:srcCompat="@drawable/ic_baseline_screenshot_monitor_24"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/humidval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="136dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/humid_text"
+            android:textAlignment="viewEnd"
+            android:textSize="70sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tempval" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="300dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/distset" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="515dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/distset" />
+
+        <TextView
+            android:id="@+id/distval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="68dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/dist_text"
+            android:textAlignment="viewEnd"
+            android:textSize="70sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidval" />
+
+        <ImageButton
+            android:id="@+id/tempbutton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="152dp"
+            android:adjustViewBounds="false"
+            android:background="#F3EBF2"
+            android:contentDescription="@string/temp_button"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_device_thermostat_24"
+            tools:ignore="ImageContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

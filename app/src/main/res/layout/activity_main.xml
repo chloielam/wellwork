@@ -2,143 +2,24 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/preference_fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F3EBF2"
     tools:context=".view.MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:background="#FFFFFF"
-        android:fontFamily="sans-serif-thin"
-        android:lineSpacingExtra="8sp"
-        android:text="@string/workwell"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#787373"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572">
 
-        <ImageButton
-            android:id="@+id/tempbutton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="56dp"
-            android:adjustViewBounds="false"
-            android:background="#F3EBF2"
-            android:contentDescription="@string/temp_button"
-            android:scaleType="fitXY"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_device_thermostat_24" />
-
-        <TextView
-            android:id="@+id/tempval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="60dp"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/temp_text"
-            android:textAlignment="viewEnd"
-            android:textSize="70sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/humidbutton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="140dp"
-            android:background="#F3EBF2"
-            android:contentDescription="@string/humid_button"
-            android:scaleType="fitXY"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tempbutton"
-            app:srcCompat="@drawable/ic_baseline_water_drop_24" />
-
-        <ImageButton
-            android:id="@+id/distbutton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="128dp"
-            android:background="#F3EBF2"
-            android:contentDescription="@string/dist_button"
-            android:scaleType="fitXY"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humidbutton"
-            app:srcCompat="@drawable/ic_baseline_screenshot_monitor_24" />
-
-        <TextView
-            android:id="@+id/humidval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="112dp"
-            android:layout_marginEnd="72dp"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/humid_text"
-            android:textAlignment="viewEnd"
-            android:textSize="70sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tempval" />
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:layout_marginTop="64dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toTopOf="@+id/humidval"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tempval"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toTopOf="@+id/distval"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humidval"
-            app:layout_constraintVertical_bias="0.582" />
-
-        <TextView
-            android:id="@+id/distval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="104dp"
-            android:layout_marginEnd="72dp"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/dist_text"
-            android:textAlignment="viewEnd"
-            android:textSize="70sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humidval" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -151,6 +32,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
         tools:layout_conversion_absoluteHeight="56dp"
-        tools:layout_conversion_absoluteWidth="411dp" />
+        tools:layout_conversion_absoluteWidth="411dp">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
