@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import org.hcmut.wellwork.R;
+import org.hcmut.wellwork.model.*;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +59,38 @@ public class HomeFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View to_return = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //set the value got from the base.
+        TextView Humid = to_return.findViewById(R.id.humidval);
+        Humid.setText(HumidityData.getData()+"%");
+        HumidityData.setHumidTextView(Humid);
+
+
+        TextView Distance = to_return.findViewById(R.id.distval);
+        Distance.setText(Integer.toString(DistanceData.getData()));
+        DistanceData.setDistanceTextView(Distance);
+
+
+        TextView Temperature = to_return.findViewById(R.id.tempval);
+        Temperature.setText(TemperatureData.getData() +"°C");
+        TemperatureData.setTemperatureTextView(Temperature);
+
+
+
+        return to_return;
+    }
+    @Override
+    public void onDetach(){
+        super.onDetach();
+        DistanceData.setDistanceTextView(null);
+        HumidityData.setHumidTextView(null);
     }
 }
+
+

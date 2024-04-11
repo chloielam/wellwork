@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'org.hcmut.wellwork'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "org.hcmut.wellwork"
         minSdk 21
-        targetSdk 33
+        targetSdk 21
         versionCode 1
         versionName "1.0"
 

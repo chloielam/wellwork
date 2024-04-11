@@ -36,7 +36,7 @@
             tools:ignore="ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/distance_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/dist_bar" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/humid_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -81,6 +81,8 @@
             android:layout_marginTop="92dp"
             android:layout_marginEnd="30dp"
             android:alpha="3"
+            android:max="200"
+            android:progress="20"
             android:thumb="@drawable/ic_baseline_screenshot_monitor_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/humid_bar" />
@@ -96,8 +98,8 @@
             android:clickable="false"
             android:duplicateParentState="false"
             android:indeterminate="false"
-            android:max="18"
-            android:progress="6"
+            android:max="100"
+            android:progress="10"
             android:thumb="@drawable/ic_baseline_water_drop_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

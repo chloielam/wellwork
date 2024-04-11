@@ -25,12 +25,12 @@ public class MQTTHelper {
     ////////////////////////////////
 
         //list of feeds
-        public final String[] arrayTopics = {"nhoxtin15/feeds/distance","nhoxtin15/feeds/humidity"};
+        public final String[] arrayTopics = {"nhoxtin15/feeds/distance","nhoxtin15/feeds/humidity","nhoxtin15/feeds/temperature"};
         //Client Id
             //This can be any thing
-        final String clientId = "12345678";
+        final String clientId = "123456";
         final String username = "nhoxtin15";
-        final String password = "aio_xnmH91SDlN4XlMDWn2g0dHgStMye";
+        final String password ="";
         final String serverUri = "tcp://io.adafruit.com:1883";
 
     public MQTTHelper(Context context){
@@ -56,16 +56,17 @@ public class MQTTHelper {
 
                 if(topic.contains("distance")){
                     //set distance
-                    DistanceData.getInstance().setData(Integer.valueOf(mqttMessage.toString()));
+                    Log.w("mqtt","distance"+mqttMessage.toString());
+                    DistanceData.setData(Integer.parseInt(mqttMessage.toString()));
 
                 }
                 else if (topic.contains("humidity")) {
                     //set humidity
-                    HumidityData.getInstance().setData(Integer.valueOf(mqttMessage.toString()));
+                    HumidityData.setData(Integer.parseInt(mqttMessage.toString()));
                 }
                 else if(topic.contains("temperature")) {
                     //set temerature
-                    TemperatureData.getInstance().setData(Integer.valueOf(mqttMessage.toString()));
+                    TemperatureData.setData(Integer.parseInt(mqttMessage.toString()));
                 }
             }
 
