@@ -30,7 +30,7 @@ public class MQTTHelper {
             //This can be any thing
         final String clientId = "123756";
         final String username = "nhoxtin15";
-        final String password ="aio_nHPl4193OeKWKFEXB0CjXmhSKaJX";
+        final String password ="";
         final String serverUri = "tcp://io.adafruit.com:1883";
 
     public MQTTHelper(Context context){
