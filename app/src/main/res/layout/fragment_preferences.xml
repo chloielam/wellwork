@@ -1,127 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.PreferencesFragment">
+<layout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="viewModel1"
+            type="org.hcmut.wellwork.viewmodel.PreferencesViewModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/pink">
+        tools:context=".view.PreferencesFragment">
 
-        <ImageView
-            android:id="@+id/dist_set_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="92dp"
-            android:contentDescription="@string/dist_set_img"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humid_set_img"
-            app:srcCompat="@drawable/ic_baseline_screenshot_monitor_24"
-            tools:ignore="ImageContrastCheck" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/pink">
 
-        <ImageView
-            android:id="@+id/humid_set_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="172dp"
-            android:contentDescription="@string/humid_set_img"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_water_drop_24"
-            tools:ignore="ImageContrastCheck" />
+            <ImageView
+                android:id="@+id/dist_set_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="128dp"
+                android:contentDescription="@string/dist_set_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humid_set_img"
+                app:srcCompat="@drawable/ic_baseline_screenshot_monitor_24"
+                tools:ignore="ImageContrastCheck" />
 
-        <TextView
-            android:id="@+id/distance_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:text="@string/dist_set_text"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dist_bar" />
+            <ImageView
+                android:id="@+id/humid_set_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="172dp"
+                android:contentDescription="@string/humid_set_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_water_drop_24"
+                tools:ignore="ImageContrastCheck" />
 
-        <TextView
-            android:id="@+id/humid_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:text="@string/humid_set_text"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humid_bar" />
+            <TextView
+                android:id="@+id/distance_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text='@{String.valueOf(viewModel1.distanceLow)+" cm"}'
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dist_bar" />
 
-        <Button
-            android:id="@+id/button_save"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="124dp"
-            android:background="@color/dark_pink"
-            android:backgroundTint="@color/dark_pink"
-            android:text="@string/save_button"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:iconTint="#FBFAFA"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/humid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="36dp"
+                android:text='@{String.valueOf(viewModel1.humidHigh)}'
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humid_bar" />
 
-        <SeekBar
-            android:id="@+id/dist_bar"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="92dp"
-            android:layout_marginEnd="30dp"
-            android:alpha="3"
-            android:max="200"
-            android:progress="20"
-            android:thumb="@drawable/ic_baseline_screenshot_monitor_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humid_bar" />
+            <Button
+                android:id="@+id/button_save"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="124dp"
+                android:background="@color/dark_pink"
+                android:backgroundTint="@color/dark_pink"
+                android:text="@string/save_button"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:iconTint="#FBFAFA"
+                android:onClick="@{() -> viewModel1.setPreferencesButton()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <SeekBar
-            android:id="@+id/humid_bar"
-            style="@style/Widget.AppCompat.SeekBar"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="172dp"
-            android:layout_marginEnd="30dp"
-            android:alpha="3"
-            android:clickable="false"
-            android:duplicateParentState="false"
-            android:indeterminate="false"
-            android:max="100"
-            android:progress="10"
-            android:thumb="@drawable/ic_baseline_water_drop_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <SeekBar
+                android:id="@+id/dist_bar"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="92dp"
+                android:layout_marginEnd="30dp"
+                android:alpha="3"
+                android:max="200"
+                android:progress="@={viewModel1.distanceLow}"
+                android:thumb="@drawable/ic_baseline_screenshot_monitor_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humid_bar" />
 
-        <TextView
-            android:id="@+id/distset"
-            android:layout_width="0dp"
-            android:layout_height="85dp"
-            android:background="#FFFFFF"
-            android:fontFamily="sans-serif-thin"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/settings_title"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#787373"
-            android:textSize="60sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.003" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <SeekBar
+                android:id="@+id/humid_bar"
+                style="@style/Widget.AppCompat.SeekBar"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="36dp"
+                android:alpha="3"
+                android:clickable="false"
+                android:duplicateParentState="false"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="@={viewModel1.humidHigh}"
+                android:thumb="@drawable/ic_baseline_water_drop_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humid_bar_low" />
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/distset"
+                android:layout_width="0dp"
+                android:layout_height="85dp"
+                android:background="#FFFFFF"
+                android:fontFamily="sans-serif-thin"
+                android:lineSpacingExtra="8sp"
+                android:text="@string/settings_title"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#787373"
+                android:textSize="60sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.003" />
+
+            <SeekBar
+                android:id="@+id/humid_bar_low"
+                style="@style/Widget.AppCompat.SeekBar"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="140dp"
+                android:layout_marginEnd="36dp"
+                android:progress="@={viewModel1.humidLow}"
+                android:thumb="@drawable/ic_baseline_water_drop_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/humid_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text='@{String.valueOf(viewModel1.humidLow)}'
+                android:textSize="30sp"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/humid_bar" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humid_set_text2"
+                android:textSize="50sp"
+                app:layout_constraintEnd_toStartOf="@+id/humid_text"
+                app:layout_constraintTop_toBottomOf="@+id/humid_bar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

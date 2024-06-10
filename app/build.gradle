@@ -29,6 +29,13 @@ android {
     buildFeatures {
         viewBinding true
     }
+    //view binding
+    viewBinding{
+        enabled = true
+    }
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
@@ -42,4 +49,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    // ViewModel and LiveData
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.3.1'
+
+    // Data Binding
+    implementation 'androidx.databinding:databinding-runtime:4.1.2'
 }

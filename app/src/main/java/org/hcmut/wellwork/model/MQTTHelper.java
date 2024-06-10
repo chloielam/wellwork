@@ -1,6 +1,7 @@
 package org.hcmut.wellwork.model;
 
 import android.content.Context;
+
 import android.util.Log;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -12,7 +13,6 @@ import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
-
 
 public class MQTTHelper {
     public MqttAndroidClient mqttAndroidClient;
@@ -28,9 +28,9 @@ public class MQTTHelper {
         public final String[] arrayTopics = {"nhoxtin15/feeds/distance","nhoxtin15/feeds/humidity","nhoxtin15/feeds/temperature"};
         //Client Id
             //This can be any thing
-        final String clientId = "123456";
+        final String clientId = "123756";
         final String username = "nhoxtin15";
-        final String password ="";
+        final String password ="aio_nHPl4193OeKWKFEXB0CjXmhSKaJX";
         final String serverUri = "tcp://io.adafruit.com:1883";
 
     public MQTTHelper(Context context){
@@ -43,7 +43,7 @@ public class MQTTHelper {
 
             @Override
             public void connectionLost(Throwable throwable) {
-
+                Log.w("mqtt","cac");
             }
 
             @Override
@@ -54,19 +54,19 @@ public class MQTTHelper {
                 //                            //
                 ////////////////////////////////
 
+
+                Log.w("mqtt",mqttMessage.toString());
                 if(topic.contains("distance")){
                     //set distance
-                    Log.w("mqtt","distance"+mqttMessage.toString());
-                    DistanceData.setData(Integer.parseInt(mqttMessage.toString()));
-
+                    Database.setData(Database.DataID.Distance,mqttMessage.toString());
                 }
                 else if (topic.contains("humidity")) {
                     //set humidity
-                    HumidityData.setData(Integer.parseInt(mqttMessage.toString()));
+                    Database.setData(Database.DataID.Humidity,mqttMessage.toString());
                 }
                 else if(topic.contains("temperature")) {
                     //set temerature
-                    TemperatureData.setData(Integer.parseInt(mqttMessage.toString()));
+                    Database.setData(Database.DataID.Temperature,mqttMessage.toString());
                 }
             }
 
@@ -127,12 +127,14 @@ public class MQTTHelper {
 
                     @Override
                     public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                        Log.d("TEST",exception.toString());
                         Log.d("TEST", "Subscribed fail!");
                     }
                 });
 
+
             } catch (MqttException ex) {
-                System.err.println("Exceptionst subscribing");
+                System.out.println("Exceptionst subscribing");
                 ex.printStackTrace();
             }
         }

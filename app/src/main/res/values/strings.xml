@@ -15,6 +15,8 @@
     <string name="settings_title">Preferences</string>
     <string name="save_button">Save</string>
     <string name="humid_set_text">30%</string>
+    <string name="humid_set_text1">10%</string>
+    <string name="humid_set_text2"> - </string>
     <string name="dist_set_text">30 cm</string>
     <string name="humid_set_img">Humidity range preferences</string>
     <string name="dist_set_img">Distance range preferences</string>
